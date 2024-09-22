@@ -5,4 +5,16 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Moraes]{deanalise}
+\abntrefinfo{Moraes}{MORAES}{}
+{MORAES, T. de O. An{\'a}lise da m{\'e}dia de alunos por turma e taxas de
+  rendimento.}
+
+\bibitem[Souza et al. 2021]{de2021determinantes}
+\abntrefinfo{Souza et al.}{SOUZA et al.}{2021}
+{SOUZA, A.~E. de et al. Determinantes do desempenho no enem na regi{\~a}o
+  nordeste: uma an{\'a}lise de dados em painel do per{\'\i}odo de 2015 a 2019.
+\textbf{Revista Brasileira de Estudos Regionais e Urbanos}, v.~15, n.~4, p.
+  690--711, 2021.}
+
 \end{thebibliography}

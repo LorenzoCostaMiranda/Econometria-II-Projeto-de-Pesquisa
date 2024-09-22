@@ -13,6 +13,7 @@
 
 \documentclass[tcc1,project]{uftex}	
 
+\usepackage{hyperref}
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 \renewcommand{\backrefpagesname}{}
 \renewcommand{\backref}{}
@@ -39,11 +40,7 @@
   \maketitle
 
   \begin{abstract}
-O curso de ciência da computação vem passando por diversas transformações e atualizações desde sua fundação no ano de 2000. Com a última atualização do Projeto Pedagógico de Curso, a disciplina \textit{Projeto de graduação}, com carga horária de 240h, foi dividida, dando origem a duas novas disciplinas: \textit{Projeto de Graduação I} e \textit{Projeto de Graduação II}. 
 
-O acadêmico matriculado na disciplina \textit{Projeto de Graduação I} possui o objetivo de construir as primeiras etapas do projeto de graduação, que geralmente inclui elementos como: decisão sobre o tema, nível de profundidade, levantamento bibliográfico e referencial teórico necessários para justificar a hipótese, além de resultados preliminares (opcional). Por outro lado, a missão do acadêmico matriculado no \textit{Projeto de Graduação II} possui como parte inicial da missão, o preenchimento do plano de trabalho que possui uma breve descrição e os objetivos de  seu trabalho, aliado a um cronograma atualizado das próximas etapas até a conclusão final de seu trabalho, que inclui a escrita e entrega da monografia.
-
-Como bons brasileiros, a maioria dos acadêmicos matriculados nesta disciplina deixou para tirarem suas dúvidas a respeito do plano de trabalho, apenas na véspera da entrega. Diante deste fato, conjuntamente com as dúvidas enviadas por meio eletrônico, é proposto este modelo de plano de trabalho, de forma a auxiliar os acadêmicos do curso de ciência da computação na primeira etapa da disciplina de Projeto de Graduação II.
 
  \end{abstract}
 
@@ -53,97 +50,81 @@ Como bons brasileiros, a maioria dos acadêmicos matriculados nesta disciplina d
 % ----------------------------------------------------------------------------------------------------- %
 \section*{Objetivos}
 
-\cite{2008:Efrat}\citeonline{2007:Lloyd}
+\textbf{Objetivo geral:} A finalidade desse projeto é verificar as possíveis explicações para o nível anual médio das notas do ENEM do estado do Tocantins, através de dados e indicadores macroeconômicos a níveis estaduais.\\
 
-Os objetivos do presente projeto são: 
-\begin{enumerate}
-	\item Criar um modelo de plano de trabalho em \LaTeX 
-	\item Publicar o modelo no site da disciplina
-	\item Disponibilizar em serviços online tais como \texttt{ShareLatex.com} e \texttt{Overleaf.com}
-\end{enumerate}
+\textbf{Objetivos específicos:} O foco está em identificar a magnitude e influência de variáveis que estão diretamente ligadas à tomada de decisões do poder local como indicadores de concentração de renda e gastos com educação. \\
 
-\section*{Cronograma previsto de atividades \label{sec:crono}}
+À princípio, objetiva-se rodar uma regressão que tem como variável dependente a notas ENEM em painel. Como variáveis independentes de interesse: concentração renda estadual e verba dedicada à educação no estado. Como variáveis independentes para completar o modelo: cor/raça, idade, localidade etc. 
 
-A descrição das atividades remanescentes está listada na Tabela \ref{tb:atividades}, enquanto que o cronograma é apresentado na Tabela \ref{tb:cronograma}.
+\section*{O Questionamento}
 
-%%%% INICIO ATIVIDADES PREVISTAS %%%%%%%%%%%%%%%%%
+A Pergunta que se deseja responder é: 
 
-\setstretch{1} 
-\begin{table}[!h]
-  \centering
-  \caption{Lista de atividades previstas.}\label{tb:atividades}
-  \begin{tabular}{cp{9.4cm}}
-    \hline \hline &\\[-0.4cm]
-    {\bf Atividades} & \multicolumn{1}{c}{\bf Descrição} \\
-    \hline
-    &\\[-0.4cm]
-    \textbf{A} &  Estudar o método CPTD. \\[0.2cm]
-    \textbf{B} &  Transformar o problema de controle ótimo em sua variante do CPTD e assim obter um problema de otimização paramétrica.\\[0.2cm]
-    \textbf{C} &  Modelar o Algoritmo Genético para otimizar o modelo obtido na etapa B.\\[0.2cm]
-    \textbf{D} &  Modelar o Algoritmo de Nuvem de Partículas para otimizar o modelo obtido na etapa B. \\[0.2cm]
-    \textbf{E} &  Executar os algoritmos em alguns cenários teste. \\[0.2cm]
-    \textbf{F} &  Comparar os resultados.\\[0.2cm]
-    \textbf{G} &  Embutir a restrição de conectividade.\\[0.2cm]
-    \textbf{H} &  Repetir as etapas B a F com a variante proposta no item G. \\[0.2cm]
-    \textbf{I} &  Comparar os resultados. \\[0.2cm]
-    \textbf{J} &  Escrita da monografia. \\[0.2cm]
-    \hline \hline
-  \end{tabular}
-\end{table}
+O índice de concentração de renda (GINI) e os gastos governamentais destinados à educação têm relevância para prever a nota média do ENEM para o estado do Tocantins? (Em caso de utilização de séries temporais)\\
 
-%%% FIM ATIVIDADES PREVISTAS %%%%%%%%%%%%%%%%%
+\section*{Introdução}
+
+A educação é um área fundamental no que tange políticas governamentais. Segundo o Ministério da Educação (MEC), ela tem por finalidade o pleno desenvolvimento da sociedade, tanto para o exercício da cidadania, quanto para a qualificação do trabalho, uma vez que possibilita o aprimoramento das capacidades técnicas dos indivíduos. Além disso, a educação está diretamente ligada ao crescimento da renda, à desigualdade social e ao desenvolvimento humano da sociedade \cite{de2021determinantes}.\\
+
+O Acesso ao conhecimento permite autonomia ao indivíduo, no qual engendra o seu desenvolvimento enquanto ser humano e possibilita modificar a realidade social. Sabe-se que, para isso, é necessário garantia de uma educação de qualidade. A caracterização de educação de qualidade, de acordo com a Organização das Nações Unidas para a Educação, Ciência e Cultura baseia-se no desenvolvimento das competências mínimas e necessárias à participação de inúmeras áreas da vida humana, na busca de enfrentar e contornar barreiras das realidades sociais. \cite{deanalise} \\
+
+Nessa perspectiva, o Exame Nacional do Ensino Médio (ENEM) é uma das principais ferramentas de avaliação do desempenho de ensino escolar fornecidas pelo Governo Federal. Entretanto, é visível que o Brasil apresenta dificuldades em diversos aspectos sociais e econômicos e que afetam os resultados dos estudantes no exame.\\
+
+\section*{Revisão da Literatura}
+
+Na literatura econômica que busca explicar o desenvolvimento escolar, existe diversos fatores que são estudados pela possível influência na qualidade da educação, como: frequência, atraso, evasão escolar e proficiência em testes. Conforme a \citeonline{de2021determinantes}, existem três principais dimensões que afetam o desempenho da nota do ENEM, que são as características individuais dos alunos, da família e da escola. \\
+
+No que tange recursos escolares, a literatura das ciências sociais está munida de argumentos no que tange despesas por aluno e proporção aluno por docente. Já outros, buscam analisar as diferenças nas notas do exame nas diferentes habilidades cognitivas nos estudantes, em que a depender do nível de aptidão, o indivíduo poderá ter mais ou menos barreiras para o aprendizado. Porém, sabe-se da dificuldade de se mensurar esse tipo de variável, ficando essa tese muito somente no campo das ideias. \\
+
+Fatores individuais como cor/raça, sexo e idade também podem estar ligados ao desempenho dos alunos. A depender da cor do indivíduo, e consequentemente da sua herança histórica e cultural, o resultado no exame pode ter uma esperança matemática a favor ou a desfavor. Pode-se hipotisar também que a variável renda esteja fortemente correlacionado com a cor do estudante, o que pode explicar as diferentes oportunidades dos indivíduos que prestam o ENEM. \\
+
+Muito mais que isso, a renda familiar, principalmente do pai ou da mãe, a escolaridade de ambos, o números de filhos que tem na família, gênero do chefe da família e forma de estrutura familiar também impactam. Pode-se refletir se famílias em condições de vida mais apertadas, e/ou possuem empregos de maior carga horária, acabam impactando o estilo de vida e as possibilidades dos filhos estudantes e consequentemente o seu desempenho escolar. \\
+
+Importante constatar que as diferenças regionais atenuam ou intensificam o fator escolaridade e renda dos pais. As regiões Centro-Oeste e Sul registraram maior influência da educação da mãe e do pai, não obstante, regiões como Nordeste e, novamente o sul, apresentaram maior e menor influência da renda no desempenho escolar respectivamente. \\
+
+A infraestrutura da escola também é extremamente importante. Essa característica tange atributos dos docentes, a qualidade da educação, dependência administrativa e a localização da escola. A rede em que a instituição de ensino pertence está associada de forma importante ao desempenho do estudante, uma vez que no cenário atual, os resultados médios da escola particular superam os da escola pública. \\
+
+\citeonline{de2021determinantes} modelou e rodou uma regressão econométrica em seu trabalho para o caso do Nordeste, em que apresenta a nota do ENEM como variável dependente e idade, em seu efeito parcial e marginal, sexo, raça, tipo de escola, escolaridade da mãe, escolaridade do pai, quantidade de moradores na casa, localização geográfica, baixa renda, ter celular, ter acesso à internet e ter acesso ao computador dos indivíduos como variáveis explanatórias. \\
+
+Dessa forma, foram analisados de forma empírica, por meio do método de dados em painel com efeitos fixos, os fatores econômicos e sociais que afetam o desempenho dos candidatos na região Nordeste no exame do ENEM no período de 2015 a 2019. De modo geral, todos os estimadores foram significativos estatisticamente de forma individual ao nível de significância de 1\%, sendo todos os resultados convergentes com a literatura. \\ 
+
+Constata-se que a idade afeta negativamente a média do ENEM, em que um ano a mais de vida do estudante, reduz a média em cerca de 14,55 pontos, o que conclui-se que ter menos idade beneficia o aluno a realizar o exame, uma vez que se pressupõe que indivíduos de maior idade ká passaram por evasão escolar e eventuais reprovações, assim, quanto menor a distorção idade-série, maior tende a ser a nota do aluno. Porém o efeito marginal é positivo, e espera-se que esse resultado se da por alunos que já adentraram em um curso, e desejam trocar ou efetuar uma segunda graduação. \\
+
+Quanto ao sexo do participante, apresentou-se que alunos masculinos apresentam desempenho superior ao feminino. Quanto à cor/raça, atestou-se que candidatos de cor branca apresentaram notas superiores aos demais, devido, principalmente, há herança cultural e os baixos salários das pessoas não brancas em relação às pessoas brancas, ou seja, estão ligadas à fatores socioeconômicos. \\
+
+Os estudantes de ensino em dependência privada apresentaram um desempenho superior a 50,27 pontos na média do que as escolas públicas. Esse resultado pode estar associado a diferença de qualidades das escolas de diferentes redes, no qual gera as principais causas da desigualdade de oportunidade educacional do Brasil. \\
+
+Quanto à escolaridade da mãe e do pai do aluno, verificou-se que estas afetam de forma positiva a nota do ENEM, uma vez que quanto maior a educação dos pais, maiores são os estímulos e incentivos que eles oferecem aos filhos a seguirem um caminho semelhante de estudos. O fato de o candidato pertencer a uma classe econômica baixa repercutiu negativamente no resultado esperado no ENEM. Isso ocorre pois os candidatos que têm maiores rendas podem garantir melhores materiais de estudos, outros meios auxiliadores como aparelhos eletrônicos, professores particulares. \\
+
+Localização da residência também afeta positivamente no sentido de que estudantes em zonas urbanas têm médias mais elevadas do que os que moram em zona rural. A quantidade de moradores, nesse caso, tem um efeito negativo na variável explicada e a presença de celulares na residência afetou positivamente, assim como a presença de computadores e o acesso à internet, no qual abrange as redes possíveis de obtenção de material e ajuda no ensino, que bem explorados, fazem a diferença na nota do exame. \\  
 
 
-%%%%% INICIO DO CRONOGRAMA %%%%%%%%%%%%%%
+ 
+ 
+\section*{Metodologia}
 
-\begin{table}[!h]
-  \centering \fontsize{8}{12}%\tiny
-  \caption{Cronograma de Atividades}\label{tb:cronograma}
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-    \hline
-    {\normalsize\bf Ano}  &\multicolumn{9}{c|}{\normalsize\bf 2014}\\
-    \hline
- {\normalsize\bf Mês} &
- \multirow{2}*{\bf Jan}&\multirow{2}*{\bf Fev}&\multirow{2}*{\bf Mar}& \multirow{2}*{\bf Abr}&\multirow{2}*{\bf Mai}& \multirow{2}*{\bf Jun}& \multirow{2}*{\bf Jul}& \multirow{2}*{\bf Ago}& \multirow{2}*{\bf Set}\\
-   \cline{1-1}
-{\bf Atv.}    & & & & & & & & &  \\
-\hline
-{\normalsize\bf A} &$\surd$ & $\surd$ & $\surd$ & & & & & &  \\
-\hline
-{\normalsize\bf B} & &  & $\surd$ & $\surd$ & & & & & \\
-\hline
-%\hhline{>{\arrayrulecolor{black}}---->{\arrayrulecolor{black}}->{\arrayrulecolor{black}}------}
-{\normalsize\bf C} & & & &$\surd$ & & & & &
-\\
-%\hhline{>{\arrayrulecolor{black}}----->{\arrayrulecolor{black}}-->{\arrayrulecolor{black}}----}
-\hline
-{\normalsize\bf D} &  &  &  &  & $\surd$& &  &  & \\
-%\hhline{>{\arrayrulecolor{black}}------>{\arrayrulecolor{black}}->{\arrayrulecolor{black}}----}
-\hline
-{\normalsize\bf E} & & & &  &$\surd$ &$\surd$ & & & \\
-%\hhline{>{\arrayrulecolor{black}}------->{\arrayrulecolor{black}}->{\arrayrulecolor{black}}---}
-\hline
-{\normalsize\bf F} & & & & & &$\surd$ & & & \\
-% \hhline{>{\arrayrulecolor{black}}-------->{\arrayrulecolor{black}}-->{\arrayrulecolor{black}}-}
-\hline
-{\normalsize\bf G} & & & & & & $\surd$& $\surd$& & \\
-% \hhline{>{\arrayrulecolor{black}}-------->{\arrayrulecolor{black}}-->{\arrayrulecolor{black}}-}
-\hline
-{\normalsize\bf H} & & & & & & & $\surd$&$\surd$ &\\
-% \hhline{>{\arrayrulecolor{black}}-------->{\arrayrulecolor{black}}-->{\arrayrulecolor{black}}-}
-\hline
-{\normalsize\bf I} & & & & & & & & $\surd$& $\surd$ \\
-\hline
 
-{\normalsize\bf J} & & & & & &$\surd$ &$\surd$ &$\surd$ &$\surd$  \\
-\hline
-  \end{tabular}
-\end{table}
+\section*{Base de Dados}
+
+\begin{itemize}
+
+\item \textbf{\href{https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem}{Microdados ENEM}}
+
+\item \textbf{\href{https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/sinopses}{Sinopses Estatísticas ENEM}}
+
+\item \textbf{\href{https://sidra.ibge.gov.br/pesquisa/pnadca/tabelas}{SIDRA (tabelas 7435, 7453 e 5939)}}
+
+\end{itemize}
+
+\bibliography{bibliography}
 
 
 % ----------------------------------------------------------------------------------------------------- %
 % Bibliografia
 % ----------------------------------------------------------------------------------------------------- %
-\bibliography{projeto_exemplo}
 
+\appendix
+\onehalfspacing	
 \end{document}
+
+
