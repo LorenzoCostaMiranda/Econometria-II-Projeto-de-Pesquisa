@@ -50,17 +50,17 @@
 % ----------------------------------------------------------------------------------------------------- %
 \section*{Objetivos}
 
-\textbf{Objetivo geral:} A finalidade desse projeto é verificar as possíveis explicações para o nível anual médio das notas do ENEM do estado do Tocantins, através de dados e indicadores macroeconômicos a níveis estaduais.\\
+\textbf{Objetivo geral:} A finalidade desse projeto é verificar as possíveis explicações para o nível anual médio das notas do ENEM do estado do Tocantins, através de dados socioeconômicos e indicadores macroeconômicos a níveis estaduais.\\
 
 \textbf{Objetivos específicos:} O foco está em identificar a magnitude e influência de variáveis que estão diretamente ligadas à tomada de decisões do poder local como indicadores de concentração de renda e gastos com educação. \\
 
-À princípio, objetiva-se rodar uma regressão que tem como variável dependente a notas ENEM em painel. Como variáveis independentes de interesse: concentração renda estadual e verba dedicada à educação no estado. Como variáveis independentes para completar o modelo: cor/raça, idade, localidade etc. 
+À princípio, objetiva-se rodar uma regressão que tem como variável dependente a notas ENEM em painel. Como variáveis independentes de interesse: concentração renda estadual e verba dedicada à educação no estado. Como variáveis independentes para completar o modelo: cor/raça, idade, localidade, renda familiar etc. 
 
 \section*{O Questionamento}
 
 A Pergunta que se deseja responder é: 
 
-O índice de concentração de renda (GINI) e os gastos governamentais destinados à educação têm relevância para prever a nota média do ENEM para o estado do Tocantins? (Em caso de utilização de séries temporais)\\
+O índice de concentração de renda (GINI) e os gastos governamentais destinados à educação têm relevância para prever a nota média do ENEM para o estado do Tocantins? \\
 
 \section*{Introdução}
 
@@ -68,7 +68,7 @@ A educação é um área fundamental no que tange políticas governamentais. Seg
 
 O Acesso ao conhecimento permite autonomia ao indivíduo, no qual engendra o seu desenvolvimento enquanto ser humano e possibilita modificar a realidade social. Sabe-se que, para isso, é necessário garantia de uma educação de qualidade. A caracterização de educação de qualidade, de acordo com a Organização das Nações Unidas para a Educação, Ciência e Cultura baseia-se no desenvolvimento das competências mínimas e necessárias à participação de inúmeras áreas da vida humana, na busca de enfrentar e contornar barreiras das realidades sociais. \cite{deanalise} \\
 
-Nessa perspectiva, o Exame Nacional do Ensino Médio (ENEM) é uma das principais ferramentas de avaliação do desempenho de ensino escolar fornecidas pelo Governo Federal. Entretanto, é visível que o Brasil apresenta dificuldades em diversos aspectos sociais e econômicos e que afetam os resultados dos estudantes no exame.\\
+Nessa perspectiva, o Exame Nacional do Ensino Médio (ENEM) é uma das principais ferramentas de avaliação do desempenho de ensino escolar fornecidas pelo Governo Federal. Entretanto, é visível que o Brasil e o Tocantins apresentam dificuldades em diversos aspectos sociais e econômicos e que afetam os resultados dos estudantes no exame.\\
 
 \section*{Revisão da Literatura}
 
@@ -101,7 +101,7 @@ Localização da residência também afeta positivamente no sentido de que estud
 
  
  
-\section*{Metodologia}
+\section*{Aspectos Metodológicos}
 
 
 \section*{Base de Dados}
@@ -110,9 +110,44 @@ Localização da residência também afeta positivamente no sentido de que estud
 
 \item \textbf{\href{https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem}{Microdados ENEM}}
 
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Código das Variáveis nos Microdados}
+\begin{tabular}{lc}
+\hline\hline
+\textbf{Variável} & \textbf{Código} \\
+\hline\hline
+idade: & \textit{TX\_FAIXA\_ETARIA} \\
+sexo: & \textit{TP\_SEXO} \\
+estado civil: & \textit{TP\_ESTADO\_CIVIL} \\
+cor/raça: & \textit{TP\_COR\_RAÇA} \\
+dependência administrativa da escola: & \textit{TP\_ESCOLA} \\
+treineiro: & \textit{IN\_TREINEIRO} \\
+Localização da escola: & \textit{TP\_LOCALIZAÇÃO\_ESC} \\
+Nota da prova de ciências da natureza: & \textit{NU\_NOTA\_CN} \\
+Nota da prova de ciências humanas: & \textit{NU\_NOTA\_CH} \\
+Nota da prova de linguagens e códigos: & \textit{NU\_NOTA\_LC} \\
+Nota da prova de de matemática: & \textit{NU\_NOTA\_MT} \\
+Escolaridade do pai: & \textit{Q001} \\
+Escolaridade da mãe: & \textit{Q002} \\
+Quantas pessoas moram da residência: & \textit{Q005} \\
+Renda mensal da família: & \textit{Q006} \\
+\hline
+\end{tabular}
+\label{Observação: Todas estão condicionadas à variável da UF do Tocantins SG\_UF\_ESC}
+\end{table}
+
+Observação: Todas estão condicionadas à variável da UF do Tocantins \textit{SG\_UF\_ESC}
+
+\begin{itemize}
+
 \item \textbf{\href{https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/sinopses}{Sinopses Estatísticas ENEM}}
 
-\item \textbf{\href{https://sidra.ibge.gov.br/pesquisa/pnadca/tabelas}{SIDRA (tabelas 7435, 7453 e 5939)}}
+\item \textbf{\href{https://sidra.ibge.gov.br/pesquisa/pnadca/tabelas}{SIDRA (tabelas 7435 $\rightarrow$ PNADC - ANUAL: Índice de Gini do rendimento domiciliar per capita, a preços médios do ano)}}
+
+\item \textbf{\href{https://portaldatransparencia.gov.br/funcoes/12-educacao?ano=2024}{Portal da Transparência para a educação}}
 
 \end{itemize}
 

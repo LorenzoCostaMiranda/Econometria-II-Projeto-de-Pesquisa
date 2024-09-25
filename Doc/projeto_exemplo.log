@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.21)  22 SEP 2024 19:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.21)  24 SEP 2024 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -719,7 +719,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count328
 \l__pdf_internal_box=\box63
 )
-(projeto_exemplo.aux)
+(projeto_exemplo.aux
+! Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.31 ...áveis nos Microdados}{table.caption.1}{}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.31 ...áveis nos Microdados}{table.caption.1}{}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+)
 \openout1 = `projeto_exemplo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -740,8 +757,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
-
-(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count329
 \scratchdimen=\dimen263
@@ -961,11 +977,29 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 \tf@brf=\write4
 \openout4 = `projeto_exemplo.brf'.
 
-)
 
-[4] 
+
+[4])
+
+[5] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(projeto_exemplo.aux)
+(projeto_exemplo.aux
+! Missing \endcsname inserted.
+<to be read again> 
+                   \protect 
+l.31 ...áveis nos Microdados}{table.caption.1}{}}
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\@newl@bel ... \bbl@tempa \csname #1@#2\endcsname 
+                                                  \def \bbl@tempb {#3}\@safe...
+l.31 ...áveis nos Microdados}{table.caption.1}{}}
+                                                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -980,19 +1014,21 @@ Package rerunfilecheck Info: File `projeto_exemplo.brf' has not changed.
 (rerunfilecheck)             Checksum: 5971D278C7D8AAE2911EE927F7E417C8;230.
  ) 
 Here is how much of TeX's memory you used:
- 18223 strings out of 473899
- 293491 string characters out of 5736289
- 720141 words of memory out of 5000000
- 40714 multiletter control sequences out of 15000+600000
- 573673 words of font info for 74 fonts, out of 8000000 for 9000
+ 18240 strings out of 473899
+ 293841 string characters out of 5736289
+ 720216 words of memory out of 5000000
+ 40726 multiletter control sequences out of 15000+600000
+ 576150 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,6n,107p,637b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 105i,9n,107p,637b,671s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Lorenzo Costa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
 600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.p
-fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on projeto_exemplo.pdf (4 pages, 63675 bytes).
+fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on projeto_exemplo.pdf (5 pages, 90552 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
+ 72 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
