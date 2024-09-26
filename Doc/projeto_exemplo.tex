@@ -13,6 +13,8 @@
 
 \documentclass[tcc1,project]{uftex}	
 
+\usepackage{amsmath}
+
 \usepackage{hyperref}
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 \renewcommand{\backrefpagesname}{}
@@ -98,12 +100,6 @@ Quanto à escolaridade da mãe e do pai do aluno, verificou-se que estas afetam 
 
 Localização da residência também afeta positivamente no sentido de que estudantes em zonas urbanas têm médias mais elevadas do que os que moram em zona rural. A quantidade de moradores, nesse caso, tem um efeito negativo na variável explicada e a presença de celulares na residência afetou positivamente, assim como a presença de computadores e o acesso à internet, no qual abrange as redes possíveis de obtenção de material e ajuda no ensino, que bem explorados, fazem a diferença na nota do exame. \\  
 
-
- 
- 
-\section*{Aspectos Metodológicos}
-
-
 \section*{Base de Dados}
 
 \begin{itemize}
@@ -115,25 +111,25 @@ Localização da residência também afeta positivamente no sentido de que estud
 \begin{table}[h]
 \centering
 \caption{Código das Variáveis nos Microdados}
-\begin{tabular}{lc}
+\begin{tabular}{lcc}
 \hline\hline
-\textbf{Variável} & \textbf{Código} \\
+\textbf{Variável} & \textbf{Código} & \textbf{Tipo} \\
 \hline\hline
-idade: & \textit{TX\_FAIXA\_ETARIA} \\
-sexo: & \textit{TP\_SEXO} \\
-estado civil: & \textit{TP\_ESTADO\_CIVIL} \\
-cor/raça: & \textit{TP\_COR\_RAÇA} \\
-dependência administrativa da escola: & \textit{TP\_ESCOLA} \\
-treineiro: & \textit{IN\_TREINEIRO} \\
-Localização da escola: & \textit{TP\_LOCALIZAÇÃO\_ESC} \\
-Nota da prova de ciências da natureza: & \textit{NU\_NOTA\_CN} \\
-Nota da prova de ciências humanas: & \textit{NU\_NOTA\_CH} \\
-Nota da prova de linguagens e códigos: & \textit{NU\_NOTA\_LC} \\
-Nota da prova de de matemática: & \textit{NU\_NOTA\_MT} \\
-Escolaridade do pai: & \textit{Q001} \\
-Escolaridade da mãe: & \textit{Q002} \\
-Quantas pessoas moram da residência: & \textit{Q005} \\
-Renda mensal da família: & \textit{Q006} \\
+idade: & \textit{TX\_FAIXA\_ETARIA} & dummy \\
+sexo: & \textit{TP\_SEXO} & dummy \\
+estado civil: & \textit{TP\_ESTADO\_CIVIL} & dummy \\
+cor/raça: & \textit{TP\_COR\_RAÇA} & dummy \\
+dependência administrativa da escola: & \textit{TP\_ESCOLA} & dummy \\
+treineiro: & \textit{IN\_TREINEIRO} & dummy \\
+Localização da escola: & \textit{TP\_LOCALIZAÇÃO\_ESC} & dummy \\
+Nota da prova de ciências da natureza: & \textit{NU\_NOTA\_CN} & quantitativa \\
+Nota da prova de ciências humanas: & \textit{NU\_NOTA\_CH} & quantitativa \\
+Nota da prova de linguagens e códigos: & \textit{NU\_NOTA\_LC} & quantitativa \\
+Nota da prova de de matemática: & \textit{NU\_NOTA\_MT} & quantitativa \\
+Escolaridade do pai: & \textit{Q001} & dummy \\
+Escolaridade da mãe: & \textit{Q002} & dummy \\
+Quantas pessoas moram da residência: & \textit{Q005} & quantitativa \\
+Renda mensal da família: & \textit{Q006} & dummy \\
 \hline
 \end{tabular}
 \label{Observação: Todas estão condicionadas à variável da UF do Tocantins SG\_UF\_ESC}
@@ -150,6 +146,31 @@ Observação: Todas estão condicionadas à variável da UF do Tocantins \textit
 \item \textbf{\href{https://portaldatransparencia.gov.br/funcoes/12-educacao?ano=2024}{Portal da Transparência para a educação}}
 
 \end{itemize}
+
+\section*{Aspectos Metodológicos}
+
+Busca-se, por meio do Mínimos Quadrados Ordinário (MQO), realizar uma regressão linear múltipla com o fito de encontrar a direção dos efeitos, suas respectivas magnitudes e a capacidade do modelo de inferir sobre os valores populacionais. 
+
+A estimação parte dessa forma:
+
+\begin{equation}	
+	Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n + \mu  
+\end{equation}
+
+\begin{equation}
+	ENEM_i = \beta_0 + \beta_1GINI_i + \beta_2GASTO_i + \beta_3IDADE_i +
+\end{equation}
+\begin{equation*}
+	\beta_4SEXO_i + \beta_5ESTCIV_i + \beta_6COR_i + \beta_7DEPADM_i
+\end{equation*}
+\begin{equation*}
+	+ \beta_8TREIN_i + \beta_9LOC_i + \beta_10ESCPAI_i +
+\end{equation*}
+\begin{equation*}
+	\beta_11ESCMAE_i + \beta_12PESS_i + \beta_13RENDA + \mu_i 
+\end{equation*}
+
+
 
 \bibliography{bibliography}
 
